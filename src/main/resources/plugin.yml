@@ -1,0 +1,7 @@
+name: KawaiiMailbox
+version: 1.0.0
+main: dev.oumaimaa.Main
+api-version: 1.21
+author: KawaiiDevelopment
+description: Modern offline mailbox system with MongoDB storage
+website: https://github.com/KawaiiDevelopmentMC
