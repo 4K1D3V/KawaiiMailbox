@@ -1,0 +1,52 @@
+# ╔════════════════════════════════════════╗
+# ║     KawaiiMailbox Messages Config      ║
+# ║      MiniMessage Format Supported      ║
+# ╚════════════════════════════════════════╝
+#
+# Color codes: https://docs.advntr.dev/minimessage/format.html
+# Examples:
+#   <red>Red text</red>
+#   <#ff0000>Hex color</#ff0000>
+#   <gradient:red:blue>Gradient text</gradient>
+#   <bold>Bold</bold> <italic>Italic</italic>
+
+messages:
+  # General Messages
+  prefix: "<gradient:#FF69B4:#FFB6C1>[KawaiiMailbox]</gradient> "
+  only-players: "<red>This command can only be used by players!"
+
+  # Usage Messages
+  usage-header: "<yellow>━━━━━━━━━ <gradient:#FF69B4:#FFB6C1>KawaiiMailbox</gradient> <yellow>━━━━━━━━━"
+  usage-send: "<gray>Usage: <aqua>/mail send <player> <message>"
+  usage-inbox: "<gray>Usage: <aqua>/mail inbox"
+  usage-clear: "<gray>Usage: <aqua>/mail clear"
+
+  # Mail Sending
+  mail-pending: "<yellow>Mail prepared for <aqua>{player}</aqua>!"
+  click-to-add-items: "<green><bold>[Click here to add items]</bold></green>"
+  mail-sent: "<green>✓ Mail sent successfully to <aqua>{player}</aqua>!"
+  mail-send-failed: "<red>✗ Failed to send mail. Please try again later."
+  mail-cancelled: "<yellow>Mail sending cancelled."
+  no-pending-mail: "<red>You don't have any pending mail to send."
+
+  # Validation Messages
+  player-not-found: "<red>Player <yellow>{player}</yellow> not found!"
+  cannot-send-self: "<red>You cannot send mail to yourself!"
+  message-too-long: "<red>Message is too long! Maximum length: {max} characters."
+  inventory-full: "<red>Your inventory is full! Please make space to claim items."
+
+  # Inbox Messages
+  new-mail-notification: "<gradient:#FF69B4:#FFB6C1>✉</gradient> <yellow>You have new mail from <aqua>{sender}</aqua>!"
+  unread-mail-notification: "<gradient:#FF69B4:#FFB6C1>✉</gradient> <yellow>You have <aqua>{count}</aqua> unread message(s)!"
+  no-mail: "<gray>Your inbox is empty."
+
+  # Item Actions
+  items-claimed: "<green>✓ Items claimed successfully!"
+
+  # Clear Command
+  mail-cleared: "<green>✓ Cleared {count} read message(s) from your inbox."
+  no-mail-to-clear: "<gray>You have no read messages to clear."
+
+  # Error Messages
+  database-error: "<red>✗ Database error occurred. Please contact an administrator."
+  command-error: "<red>✗ An error occurred while executing this command."

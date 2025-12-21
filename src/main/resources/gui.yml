@@ -1,0 +1,106 @@
+# ╔════════════════════════════════════════╗
+# ║      KawaiiMailbox GUI Configuration   ║
+# ║        Fully Customizable Interfaces   ║
+# ╚════════════════════════════════════════╝
+
+# Inbox GUI Configuration
+inbox:
+  title: "📬 Mailbox"
+  size: 54  # Must be a multiple of 9 (9, 18, 27, 36, 45, 54)
+
+  # Fill empty slots with glass panes
+  fill-empty-slots: true
+  filler-material: GRAY_STAINED_GLASS_PANE
+
+  # Mail item representation
+  mail-item:
+    unread-material: WRITABLE_BOOK
+    read-material: PAPER
+
+  # Navigation buttons
+  previous-button:
+    slot: 45
+    material: ARROW
+    name: "← Previous Page"
+    lore:
+      - "Click to view previous page"
+
+  next-button:
+    slot: 53
+    material: ARROW
+    name: "Next Page →"
+    lore:
+      - "Click to view next page"
+
+  close-button:
+    slot: 49
+    material: BARRIER
+    name: "Close"
+    lore:
+      - "Click to close"
+
+# Mail Detail GUI Configuration
+mail-detail:
+  title: "📧 Mail Details"
+  size: 54
+
+  fill-empty-slots: true
+  filler-material: GRAY_STAINED_GLASS_PANE
+
+  # Information display item
+  info-item:
+    slot: 4
+    material: WRITABLE_BOOK
+
+  # Area for displaying attached items
+  items-start-slot: 19  # Items will be displayed from this slot
+
+  # Action buttons
+  claim-button:
+    slot: 48
+    material: CHEST
+    name: "Claim Items"
+    lore:
+      - "Click to claim attached items"
+
+  back-button:
+    slot: 45
+    material: ARROW
+    name: "← Back to Inbox"
+    lore:
+      - "Return to mailbox"
+
+  close-button:
+    slot: 49
+    material: BARRIER
+    name: "Close"
+    lore:
+      - "Click to close"
+
+# Add Items GUI Configuration
+add-items:
+  title: "📦 Add Items to Mail"
+  size: 54
+
+  # Border decoration
+  border-material: BLACK_STAINED_GLASS_PANE
+
+  # Instruction item
+  instruction-item:
+    slot: 4
+    material: BOOK
+
+  # Action buttons
+  confirm-button:
+    slot: 48
+    material: LIME_CONCRETE
+    name: "✓ Confirm and Send"
+    lore:
+      - "Send mail with items"
+
+  cancel-button:
+    slot: 50
+    material: RED_CONCRETE
+    name: "✗ Cancel"
+    lore:
+      - "Cancel and return items"

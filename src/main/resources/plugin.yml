@@ -1,7 +1,33 @@
 name: KawaiiMailbox
 version: 1.0.0
 main: dev.oumaimaa.Main
-api-version: 1.21
-author: KawaiiDevelopment
-description: Modern offline mailbox system with MongoDB storage
-website: https://github.com/KawaiiDevelopmentMC
+api-version: '1.21'
+author: oumaimaa
+description: Professional offline mailbox system with MongoDB integration
+
+commands:
+  mail:
+    description: Main mailbox command
+    usage: /mail <send|inbox|clear|help>
+    aliases: [mailbox, m]
+  mail:additems:
+    description: Hidden command for add items GUI
+    usage: Internal use only
+
+permissions:
+  kawaiimailbox.send:
+    description: Allows sending mail
+    default: true
+  kawaiimailbox.inbox:
+    description: Allows viewing inbox
+    default: true
+  kawaiimailbox.clear:
+    description: Allows clearing read mail
+    default: true
+  kawaiimailbox.admin:
+    description: Grants all mailbox permissions
+    default: op
+    children:
+      kawaiimailbox.send: true
+      kawaiimailbox.inbox: true
+      kawaiimailbox.clear: true

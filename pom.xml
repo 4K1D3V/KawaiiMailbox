@@ -6,17 +6,18 @@
 
     <groupId>dev.oumaimaa</groupId>
     <artifactId>KawaiiMailbox</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>KawaiiMailbox</name>
-    <description>Advanced offline mailbox system with MongoDB integration</description>
+    <description>A cute mailbox plugin for Paper servers with MongoDB persistence.</description>
 
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <paper.api.version>1.21.4-R0.1-SNAPSHOT</paper.api.version>
-        <mongodb.version>5.2.1</mongodb.version>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <paper.api.version>1.21.11-R0.1-SNAPSHOT</paper.api.version>
+        <mongodb.version>5.4.0</mongodb.version>
     </properties>
 
     <build>
@@ -27,14 +28,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -48,16 +45,6 @@
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <minimizeJar>true</minimizeJar>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/*.SF</exclude>
-                                        <exclude>META-INF/*.DSA</exclude>
-                                        <exclude>META-INF/*.RSA</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
                             <relocations>
                                 <relocation>
                                     <pattern>com.mongodb</pattern>
@@ -67,16 +54,13 @@
                                     <pattern>org.bson</pattern>
                                     <shadedPattern>dev.oumaimaa.libs.bson</shadedPattern>
                                 </relocation>
-                                <relocation>
-                                    <pattern>org.yaml.snakeyaml</pattern>
-                                    <shadedPattern>dev.oumaimaa.libs.snakeyaml</shadedPattern>
-                                </relocation>
                             </relocations>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -87,58 +71,22 @@
 
     <repositories>
         <repository>
-            <id>papermc</id>
+            <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>jitpack</id>
-            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
     <dependencies>
-        <!-- Paper API -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>${paper.api.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- Bedrock Framework -->
-        <dependency>
-            <groupId>com.github.SlimifiedxD</groupId>
-            <artifactId>bedrock</artifactId>
-            <version>main-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- SnakeYAML (Required by Bedrock) -->
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>2.3</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- MongoDB Driver -->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
             <version>${mongodb.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-core</artifactId>
-            <version>${mongodb.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>bson</artifactId>
-            <version>${mongodb.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

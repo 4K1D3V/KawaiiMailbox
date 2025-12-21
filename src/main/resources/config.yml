@@ -1,0 +1,46 @@
+# ╔════════════════════════════════════════╗
+# ║      KawaiiMailbox Configuration       ║
+# ║   Professional Mailbox System v1.0.0   ║
+# ╚════════════════════════════════════════╝
+
+# MongoDB Connection Settings
+database:
+  # MongoDB connection string (required)
+  # Format: mongodb://username:password@host:port/database
+  # Or for MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/database
+  connection-string: "mongodb://localhost:27017"
+
+  # Database name to use
+  database-name: "kawaii_mailbox"
+
+# Mail System Settings
+mail:
+  # Maximum message length in characters
+  max-message-length: 500
+
+  # Maximum number of items that can be attached to a single mail
+  max-items-per-mail: 27
+
+# Inbox Settings
+inbox:
+  # Number of messages to display per page
+  messages-per-page: 27
+
+  # Auto-open inbox on join if player has unread mail
+  auto-open-on-join: true
+
+  # Delay in ticks before auto-opening inbox (20 ticks = 1 second)
+  auto-open-delay-ticks: 40
+
+# Notification Settings
+notifications:
+  # Sound to play when player has unread mail
+  # Valid sounds: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  sound-volume: 1.0
+  sound-pitch: 1.0
+
+  # Particle effects
+  particles-enabled: true
+  particle-type: "VILLAGER_HAPPY"
+  particle-count: 10
