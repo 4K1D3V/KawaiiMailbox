@@ -250,4 +250,4 @@ This plugin is provided as-is for use on Minecraft servers. All rights reserved.
 
 ---
 
-**Made with 💖 by a developer with 25 years of Java experience**
+**Made with 💖 by a developer with 5 years of Java experience**
