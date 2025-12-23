@@ -123,7 +123,7 @@ public class MailCommand implements TabExecutor {
         // Send clickable message to add items
         Component addItemsComponent = plugin.getConfigManager()
                 .getMessage("click-to-add-items")
-                .clickEvent(ClickEvent.runCommand("/mail:additems"));
+                .clickEvent(ClickEvent.runCommand("/mail-additems"));
 
         sender.sendMessage(plugin.getConfigManager().getMessage("mail-pending",
                 "{player}", finalTargetName));

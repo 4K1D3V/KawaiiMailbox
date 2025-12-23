@@ -10,7 +10,7 @@ commands:
     description: Main mailbox command
     usage: /mail <send|inbox|clear|help>
     aliases: [mailbox, m]
-  mail:additems:
+  mail-additems:
     description: Hidden command for add items GUI
     usage: Internal use only
 
