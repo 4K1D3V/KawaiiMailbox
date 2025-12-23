@@ -11,7 +11,7 @@ import java.util.Base64;
  * <p>This class provides methods to convert ItemStacks to Base64 strings
  * and vice versa for storage in MongoDB using modern NBT serialization.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public final class ItemStackSerializer {
@@ -23,7 +23,7 @@ public final class ItemStackSerializer {
     /**
      * Serializes an ItemStack to a Base64 encoded string using NBT bytes
      *
-     * @param item the ItemStack to serialize (maybe null or air)
+     * @param item the ItemStack to serialize (may be null or air)
      * @return the Base64 encoded string representation, or null if item is null/air
      */
     public static @Nullable String serialize(@Nullable ItemStack item) {
@@ -54,6 +54,7 @@ public final class ItemStackSerializer {
             byte[] bytes = Base64.getDecoder().decode(data);
             return ItemStack.deserializeBytes(bytes);
         } catch (Exception e) {
+            // Log the exception in your plugin if needed
             return null;
         }
     }

@@ -21,7 +21,7 @@ import java.util.concurrent.CompletableFuture;
  * <p>This class provides asynchronous methods for all mail-related operations
  * to prevent blocking the main server thread during database operations.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class MailboxManager {

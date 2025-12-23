@@ -15,7 +15,7 @@ import java.util.UUID;
  * <p>This class encapsulates all data associated with a mail message including
  * sender, recipient, content, attachments, and status information.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class Mail {

@@ -7,10 +7,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,10 +23,10 @@ import java.util.UUID;
  * <p>This class processes mail commands including send, inbox, and clear operations
  * with proper permission checks and error handling.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
-public class MailCommand implements CommandExecutor, TabCompleter {
+public class MailCommand implements TabExecutor {
 
     private final Main plugin;
     private final Map<UUID, PendingMail> pendingMails;
@@ -135,7 +132,7 @@ public class MailCommand implements CommandExecutor, TabCompleter {
         // Auto-send after delay if no items added
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (pendingMails.containsKey(sender.getUniqueId())) {
-                sendPendingMail(sender, false);
+                sendPendingMail(sender);
             }
         }, 20L * 60); // 60 seconds timeout
     }
@@ -159,9 +156,8 @@ public class MailCommand implements CommandExecutor, TabCompleter {
      * Confirms and sends the pending mail
      *
      * @param player the sender
-     * @param withItems whether items were added
      */
-    public void sendPendingMail(@NotNull Player player, boolean withItems) {
+    public void sendPendingMail(@NotNull Player player) {
         PendingMail pending = pendingMails.remove(player.getUniqueId());
         if (pending == null) {
             player.sendMessage(plugin.getConfigManager().getMessage("no-pending-mail"));

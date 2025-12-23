@@ -22,7 +22,7 @@ import java.util.Objects;
  * <p>This class handles loading, reloading, and accessing configuration values
  * from config.yml, messages.yml, and gui.yml files.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class ConfigManager {

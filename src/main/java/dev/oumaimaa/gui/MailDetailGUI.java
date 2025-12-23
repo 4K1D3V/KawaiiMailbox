@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * GUI for displaying detailed mail information
@@ -29,7 +30,7 @@ import java.util.List;
  * <p>This class creates an interface showing the full mail content,
  * attached items, and action buttons.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class MailDetailGUI implements Listener {
@@ -148,8 +149,8 @@ public class MailDetailGUI implements Listener {
             return;
         }
 
-        int startSlot = guiConfig.getInt("items-start-slot", 19);
-        int slot = startSlot;
+        AtomicInteger startSlot = new AtomicInteger(guiConfig.getInt("items-start-slot", 19));
+        int slot = startSlot.get();
 
         for (ItemStack item : mail.getItems()) {
             if (slot >= 35) break; // Don't overflow into button area

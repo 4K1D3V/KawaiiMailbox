@@ -27,7 +27,7 @@ import java.util.List;
  * <p>This class creates an interface where players can add items
  * to their pending mail before sending.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class AddItemsGUI implements Listener {
@@ -271,7 +271,7 @@ public class AddItemsGUI implements Listener {
         }
 
         player.closeInventory();
-        mailCommand.sendPendingMail(player, !pendingMail.items.isEmpty());
+        mailCommand.sendPendingMail(player);
     }
 
     /**

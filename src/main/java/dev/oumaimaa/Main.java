@@ -15,7 +15,7 @@ import java.util.Objects;
  * <p>This plugin provides a comprehensive mailbox system allowing players to send
  * messages and items to offline players, with persistent storage in MongoDB.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public final class Main extends JavaPlugin {
@@ -122,7 +122,7 @@ public final class Main extends JavaPlugin {
     }
 
     /**
-     * Registers all plugin commands with their executors and tab completer
+     * Registers all plugin commands with their executors and tab completers
      */
     private void registerCommands() {
         MailCommand mailCommand = new MailCommand(this);

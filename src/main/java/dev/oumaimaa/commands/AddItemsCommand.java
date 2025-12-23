@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * <p>This command is triggered by clicking the "Add items" link
  * in chat when a mail is pending.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class AddItemsCommand implements CommandExecutor {

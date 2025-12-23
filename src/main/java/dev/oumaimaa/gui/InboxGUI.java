@@ -29,7 +29,7 @@ import java.util.List;
  * <p>This class creates and manages the interactive inbox interface where
  * players can view their received mail messages.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class InboxGUI implements Listener {

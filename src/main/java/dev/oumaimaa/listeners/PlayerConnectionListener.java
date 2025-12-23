@@ -24,7 +24,7 @@ import java.util.UUID;
  * <p>This class manages the join experience, checking for unread mail
  * and notifying players with messages, sounds, and optional auto-open inbox.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class PlayerConnectionListener implements Listener {
@@ -48,7 +48,7 @@ public class PlayerConnectionListener implements Listener {
      * @param event the player join event
      */
     @EventHandler(priority = EventPriority.HIGH)
-    public void onPlayerJoin(PlayerJoinEvent event) {
+    public void onPlayerJoin(@NotNull PlayerJoinEvent event) {
         Player player = event.getPlayer();
         UUID playerUUID = player.getUniqueId();
 

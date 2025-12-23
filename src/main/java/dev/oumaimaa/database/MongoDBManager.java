@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  * <p>This class handles the lifecycle of MongoDB connections including
  * initialization, connection pooling, and graceful shutdown.</p>
  *
- * @author Oumaimaa
+ * @author oumaimaa
  * @version 1.0.0
  */
 public class MongoDBManager {
