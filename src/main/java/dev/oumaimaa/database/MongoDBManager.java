@@ -9,7 +9,11 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import dev.oumaimaa.Main;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.spi.LoggerContext;
 import org.bson.Document;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -46,6 +50,10 @@ public class MongoDBManager {
      */
     public boolean connect() {
         try {
+            LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
+            Logger mongoLogger = loggerContext.getLogger("org.mongodb.driver");
+            mongoLogger.atLevel(Level.ERROR);
+
             String connectionString = plugin.getConfigManager().getDatabaseConnectionString();
             String databaseName = plugin.getConfigManager().getDatabaseName();
 
